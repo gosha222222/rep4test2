@@ -9,12 +9,6 @@ def attack(u1, u2):
     print(f'У игрока {u1["name"]} осталось {round(u1["health"], 2)} жизней')
     print(f'У игрока {u2["name"]} осталось {round(u2["health"], 2)} жизней\n')
 
-def winner(u1, u2,):
-    if u1["health"] > u2["health"]:
-        print(f'Победил(а) {u1["name"]}, у него осталось {round(u1["health"], 2)} жизней!')
-    else:
-        print(f'Победил(а) {u2["name"]}, у него осталось {round(u2["health"], 2)} жизней!')
-
 def armor(u1, u2):
     u1["damage"] = u1["damage"] / u2["armor"]
     u2["damage"] = u2["damage"] / u1["armor"]
@@ -29,8 +23,8 @@ def write_to(player_dict):
             else:
                 file.write(str(value) + '; ')
 
-dmg1 = 0
-dmg2 = 0
+dmg1 = 10
+dmg2 = 20
 
 name1 = input("Игрок 1, введите имя своего персонажа\n")
 name2 = input("Игрок 2, введите имя своего персонажа\n")
@@ -44,4 +38,3 @@ i = 0
 while u1["health"] > 0 and u2["health"] > 0:
     i += 1
     attack(u1, u2)
-winner(u1, u2)
