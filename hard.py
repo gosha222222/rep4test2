@@ -3,16 +3,10 @@ import random
 def attack(u1, u2):
     u1["damage"] = random.randint(15, 35)
     u2["damage"] = random.randint(15, 35)
-    armor(u1, u2)
     u1["health"] = u1["health"] - u2["damage"]
     u2["health"] = u2["health"] - u1["damage"]
     print(f'У игрока {u1["name"]} осталось {round(u1["health"], 2)} жизней')
     print(f'У игрока {u2["name"]} осталось {round(u2["health"], 2)} жизней\n')
-
-def armor(u1, u2):
-    u1["damage"] = u1["damage"] / u2["armor"]
-    u2["damage"] = u2["damage"] / u1["armor"]
-    return u1, u2
 
 def write_to(player_dict):
 
